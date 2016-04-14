@@ -66,14 +66,19 @@ main_page_head = '''
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
-            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var title = $(this).attr('data-movie-title')
+
+            var posterUrl = $(this).attr('data-movie-poster')
+            $("#trailer-video-container").empty().append("<img src = " + posterUrl + "></img><p>"+title+"</p>")
+
+            /*var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
               'src': sourceUrl,
               'frameborder': 0
-            }));
+            }));*/
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
@@ -122,7 +127,9 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-movie-title="{movie_title}"
+    data-movie-poster="{poster_image_url}"
+    data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="180" height="250">
     <h3>{movie_title}</h3>
 </div>

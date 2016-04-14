@@ -60,14 +60,19 @@
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
-            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var title = $(this).attr('data-movie-title')
+
+            var posterUrl = $(this).attr('data-movie-poster')
+            $("#trailer-video-container").empty().append("<img src = " + posterUrl + "></img><p>"+title+"</p>")
+
+            /*var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
               'src': sourceUrl,
               'frameborder': 0
-            }));
+            }));*/
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
@@ -104,27 +109,37 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7jIBCiYg58k" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7jIBCiYg58k" data-movie-title="Deadpool"
+    data-movie-poster="https://image.tmdb.org/t/p/w185/inVq3FRqcYIRl2la8iZikYYxFNR.jpg"
+    data-toggle="modal" data-target="#trailer">
     <img src="https://image.tmdb.org/t/p/w185/inVq3FRqcYIRl2la8iZikYYxFNR.jpg" width="180" height="250">
     <h3>Deadpool</h3>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Ay-ZN4uRZ-4" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Ay-ZN4uRZ-4" data-movie-title="The Hunger Games: Mockingjay - Part 2"
+    data-movie-poster="https://image.tmdb.org/t/p/w185/nN4cEJMHJHbJBsp3vvvhtNWLGqg.jpg"
+    data-toggle="modal" data-target="#trailer">
     <img src="https://image.tmdb.org/t/p/w185/nN4cEJMHJHbJBsp3vvvhtNWLGqg.jpg" width="180" height="250">
     <h3>The Hunger Games: Mockingjay - Part 2</h3>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2h6IKpgFixg" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2h6IKpgFixg" data-movie-title="Mad Max: Fury Road"
+    data-movie-poster="https://image.tmdb.org/t/p/w185/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+    data-toggle="modal" data-target="#trailer">
     <img src="https://image.tmdb.org/t/p/w185/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" width="180" height="250">
     <h3>Mad Max: Fury Road</h3>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="nIGtF3J5kn8" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="nIGtF3J5kn8" data-movie-title="Batman v Superman: Dawn of Justice"
+    data-movie-poster="https://image.tmdb.org/t/p/w185/6bCplVkhowCjTHXWv49UjRPn0eK.jpg"
+    data-toggle="modal" data-target="#trailer">
     <img src="https://image.tmdb.org/t/p/w185/6bCplVkhowCjTHXWv49UjRPn0eK.jpg" width="180" height="250">
     <h3>Batman v Superman: Dawn of Justice</h3>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="C_Tsj_wTJkQ" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="C_Tsj_wTJkQ" data-movie-title="The Hunger Games: Mockingjay - Part 1"
+    data-movie-poster="https://image.tmdb.org/t/p/w185/cWERd8rgbw7bCMZlwP207HUXxym.jpg"
+    data-toggle="modal" data-target="#trailer">
     <img src="https://image.tmdb.org/t/p/w185/cWERd8rgbw7bCMZlwP207HUXxym.jpg" width="180" height="250">
     <h3>The Hunger Games: Mockingjay - Part 1</h3>
 </div>
